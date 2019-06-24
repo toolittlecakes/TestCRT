@@ -1,12 +1,12 @@
 #include <iostream>
-#include "utils.h"
-
+#include "demo.h"
 
 
 int main(int argc, char **argv) {
 
     try {
-        run_demo(parse_params(argc, argv));
+        Demo demo{argc, argv};
+        demo.run();
     }
     catch (std::exception &exception) {
         std::cerr << "Error: " << exception.what() << std::endl;
